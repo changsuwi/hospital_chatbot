@@ -50,7 +50,7 @@ def json_mainbutton(recipient_id):
                 "quick_replies": [
                     {
                         "content_type": "text",
-                        "title": "1號",
+                        "title": "病情諮詢",
                         "payload": "main_button1"
                     },
                     {

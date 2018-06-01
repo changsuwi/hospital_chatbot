@@ -13,8 +13,7 @@ def message_control(messaging_event, sender_id):
         if message_text == u'hello':
             json_message(
                 sender_id, "hello")
-        elif flag == 1:
-            json_message(sender_id, "資料庫批配中，請稍後")
+
             '''
             接冠文的code
             '''

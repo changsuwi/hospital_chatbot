@@ -9,7 +9,7 @@ def message_control(messaging_event, sender_id):
         message_text = messaging_event["message"][
             "text"]  # the message's text
         print(sender_id)  # test
-        if message_text == u'hello' or u'Hello':
+        if message_text == u'hello' or message_text == u'Hello':
             upload_flag(0, sender_id)
             json_message(sender_id, "您好，我是醫護助理聊天機器人，請問需要什麼服務呢?")
             json_mainbutton(sender_id)

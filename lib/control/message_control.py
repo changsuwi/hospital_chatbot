@@ -2,6 +2,7 @@
 
 from ..json_fb import typingon_json, json_message, json_mainbutton
 from db import get_flag, upload_flag
+from kcom_analy import kcom_analy
 
 
 def message_control(messaging_event, sender_id):
@@ -22,6 +23,11 @@ def message_control(messaging_event, sender_id):
             elif get_flag(sender_id) == 1:
                 json_message(
                     sender_id, "目前正在搜查比對資料庫 請稍後")
+                total = kcom_analy(message_text)
+                for period in total:
+                    print('時間： %s' % period['time'].encode('utf-8'))
+                    print('症狀： %s' % ','.join(period['sym']).encode('utf-8'))
+                print('\n')
 
                 '''
                 接冠文的code

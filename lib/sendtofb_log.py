@@ -11,7 +11,7 @@ import requests
 
 def sendtofb(data):  # send json to facebook
     params = {
-        "access_token": os.environ["PAGE_ACCESS_TOKEN"]
+        "access_token": "EAACeotxtmv4BAOOn5zrKJcmNNRH37ptIIIUJzAlTeYFN80ZCdefXqKRmQwGZAOj8BTRXwKia54udAjBFWBStPq2NE1cKOLm5LCr4PcM9heuOSgcGzX2WRxcVZC24ZByZCl2ZA5WhWbDZC0aJh9m0IajdrYK9XAFk2uTaW8ibpSFIQZDZD"
     }
     headers = {
         "Content-Type": "application/json"
@@ -24,5 +24,5 @@ def sendtofb(data):  # send json to facebook
 
 
 def log(message):  # simple wrapper for logging to stdout on heroku
-    print str(message)
+    print(message)
     sys.stdout.flush()

@@ -1,8 +1,9 @@
 # coding=utf-8
 
 from ..json_fb import typingon_json, json_message, json_mainbutton
-from db import get_flag, upload_flag
-from kcom_analy import kcom_analy
+from .db import get_flag, upload_flag, match_sym
+from .kcom_analy import kcom_analy
+from .kcom_replace import kcom_replace
 
 
 def message_control(messaging_event, sender_id):
@@ -23,12 +24,22 @@ def message_control(messaging_event, sender_id):
             elif get_flag(sender_id) == 1:
                 json_message(
                     sender_id, "目前正在搜查比對資料庫 請稍後")
-                total = kcom_analy(message_text)
-                for period in total:
-                    print('時間： %s' % period['time'].encode('utf-8'))
-                    print('症狀： %s' % ','.join(period['sym']).encode('utf-8'))
-                print('\n')
 
-                '''
-                接冠文的code
-                '''
+                # Guan Wen's code
+                replace_mes = kcom_replace(message_text)
+                print(replace_mes)
+                total = kcom_analy(replace_mes)
+                sym_list = []
+                for period in total:
+                    # add user's sym in list
+                    sym_list = sym_list + period['sym']
+
+                # do match_sym and return the meantime in hospital and Cresult
+                result, meantime = match_sym(sym_list)
+                if result != {}:
+                    res_str = "平均在急診室的時間為" + str(meantime * 24) + "小時" + "\n"
+                    for key, value in result.items():
+                        # if probobility is small, ignore it
+                        if value > 0.01:
+                            res_str = res_str + key + ":" + str(value) + '\n'
+                    json_message(sender_id, res_str)

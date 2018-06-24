@@ -5,7 +5,7 @@ json_fb 此模組主要存放通用的json格式與打包
 例如使用者輸入json ，template打包 ， main button 的json ，message的打包
 @author: vicharm
 """
-from sendtofb_log import sendtofb, log
+from .sendtofb_log import sendtofb, log
 import json
 
 

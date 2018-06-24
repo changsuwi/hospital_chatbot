@@ -188,8 +188,4 @@ def kcom_analy(kcom_str):
         #total.append({'time': '現在', 'sym': [e_now]})
 
     print('%s' % kcom_str)
-    for period in total:
-        print('時間： %s' % period['time'].encode('utf-8'))
-        print('症狀： %s' % ','.join(period['sym']).encode('utf-8'))
-    print('\n')
     return total

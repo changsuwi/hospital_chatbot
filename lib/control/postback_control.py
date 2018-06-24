@@ -1,7 +1,7 @@
 # coding=utf-8
 
 from ..json_fb import json_mainbutton, json_message
-from db import upload_flag
+from .db import upload_flag
 
 
 def postback_control(messaging_event, sender_id):

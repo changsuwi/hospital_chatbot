@@ -1,3 +1,23 @@
+# 環境
+1. python 2.7
+2. mongodb
+3. ngrok
+# 使用方法
+1. 下載ngrok至hospital_chatbot資料夾內
+2. 匯入mongodb的csv
+3. 開啟終端機，cd到hospital_chatbot，執行指令來開啟ngrok
+```
+./ngrok http 5000
+```
+4. ngork已開啟，另開新的終端機，cd到hospital_chatbot，接著執行app.py
+ˋˋˋ
+python app.py
+ˋˋˋ
+5. 程式正常執行在port 5000，回到ngrok，copy web interface欄位的網址，ngrok會生成兩個tunnel url
+6. 點擊 https的url，看到hello world 代表app.py正常執行
+7. 進入facebook for developer，點擊我的應用程式，選擇hospital_chatbot，左邊有一個webhook按鈕，點擊進去
+8. 按下edit subscription 把ngrok 生成的 https 網址貼到回呼網址的欄位， 把我們messenger群組的名字貼到驗證權杖欄位，按下驗證並儲存
+9. 如果沒跳出任何錯誤訊息，則現在就可以從messenger跟chatbot做互動
 # chatbot 架構
 ## app.py
 主程式

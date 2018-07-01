@@ -10,9 +10,9 @@
 ./ngrok http 5000
 ```
 4. ngork已開啟，另開新的終端機，cd到hospital_chatbot，接著執行app.py
-ˋˋˋ
+```
 python app.py
-ˋˋˋ
+```
 5. 程式正常執行在port 5000，回到ngrok，copy web interface欄位的網址，ngrok會生成兩個tunnel url
 6. 點擊 https的url，看到hello world 代表app.py正常執行
 7. 進入facebook for developer，點擊我的應用程式，選擇hospital_chatbot，左邊有一個webhook按鈕，點擊進去

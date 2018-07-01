@@ -3,8 +3,8 @@
 2. mongodb
 3. ngrok
 # 使用方法
-1. 下載ngrok至hospital_chatbot資料夾內
-2. 匯入mongodb的csv
+1. 在localhost開mongodb，匯入最新版本的csv
+2. 把匯入的資料表取名為kcom
 3. 開啟終端機，cd到hospital_chatbot，執行指令來開啟ngrok
 ```
 ./ngrok http 5000

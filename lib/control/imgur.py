@@ -8,7 +8,7 @@ Created on Tue May 02 22:16:19 2017
 from imgurpython import ImgurClient
 
 
-def upload_photo(image_url):
+def upload_photo(image_path):
     client_id = '9efb779cd512a75'
     client_secret = 'f0c60f6d82e3b9b2d33a7f81318ac950ee424aa4'
     access_token = '3827abdb987541f4e5d7831cfa91f64b838d6fcf'
@@ -20,6 +20,6 @@ def upload_photo(image_url):
     }
 
     print("Uploading image... ")
-    image = client.upload_from_url(image_url, config=config, anon=False)
+    image = client.upload_from_path(image_path, config=config, anon=False)
     print("Done")
     return image['link']

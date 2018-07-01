@@ -66,7 +66,11 @@ def match_sym(sym_list):
             if u"病房" in data['Cresult']:
                 data['Cresult'] = "一般病房"
             if "ICU" in data['Cresult']:
-                data['Cresult'] = "ICU"
+                data['Cresult'] = "加護病房"
+            if "2.A.A.D" in data['Cresult']:
+                data['Cresult'] = "自動出院"
+            if "1.未治癒離院" in data['Cresult']:
+                data['Cresult'] = "未治癒離院"
             # store Cresult in dict
             if data['Cresult'] in result:
                 result[data['Cresult']] = result[data['Cresult']] + 1

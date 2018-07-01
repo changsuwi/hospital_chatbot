@@ -55,23 +55,8 @@ def json_mainbutton(recipient_id):
                     },
                     {
                         "content_type": "text",
-                        "title": "2號",
+                        "title": "與醫師對話",
                         "payload": "main_button2"
-                    },
-                    {
-                        "content_type": "text",
-                        "title": "3號",
-                        "payload": "main_button3"
-                    },
-                    {
-                        "content_type": "text",
-                        "title": "4號",
-                        "payload": "main_button4"
-                    },
-                    {
-                        "content_type": "text",
-                        "title": "5號",
-                        "payload": "main_button5"
                     }
                 ]
             }

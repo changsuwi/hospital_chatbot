@@ -18,6 +18,7 @@ def postback_control(messaging_event, sender_id):
 
     elif messaging_event["postback"]["payload"] == 'main_button2':
         upload_flag(2, sender_id)
+        json_message(sender_id, "聯絡醫師中，請稍候")
 
     elif messaging_event["postback"]["payload"] == 'main_button3':
         upload_flag(3, sender_id)
